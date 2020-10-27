@@ -8,9 +8,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login"
+        android:layout_width="92dp"
+        android:layout_height="53dp"
+        android:text="Login"
+        android:textColor="#040404"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

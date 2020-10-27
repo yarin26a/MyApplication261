@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="arbox"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:background="#2196F3"
+        android:backgroundTint="#FFFFFF"
+        android:text="ARBOX"
+        android:textColor="#2196F3"
+        android:textColorHighlight="#208CE3"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
