@@ -5,10 +5,59 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
-    String email="";
+    String email = "";
+    int age;
+    int weight;
+    public SeekBar customSeekBar;
+    public SeekBar customSeekBar1;
+    private TextView customAgeTextView;
+    private TextView customWeightTextView;
+    private OnSeekBarChangeListener customSeekBarListener = new OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            age = seekBar.getProgress();
+            customAgeTextView.setText(age);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+
+    };
+
+    private OnSeekBarChangeListener customSeekBarListener1 = new OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+          weight = seekBar.getProgress();
+          customWeightTextView.setText(weight);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+
+    };
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +66,13 @@ public class MainActivity2 extends AppCompatActivity {
         Intent i=getIntent();
         email=i.getStringExtra("email");
         Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
+
+        customWeightTextView = findViewById(R.id.customWeightTextView);
+        customAgeTextView = findViewById(R.id.customAgeTextView);
+        customSeekBar = findViewById(R.id.customSeekBar);
+        customSeekBar.setOnSeekBarChangeListener(customSeekBarListener);
+        customSeekBar1 = findViewById(R.id.customSeekBar1);
+        customSeekBar1.setOnSeekBarChangeListener(customSeekBarListener1);
     }
 
     public void onClicksubmitregister(View view) {
