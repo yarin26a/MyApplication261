@@ -19,6 +19,9 @@ import java.util.List;
 public class MainActivity5 extends AppCompatActivity {
 int datei;
 int timei;
+    private EditText  dateInput;
+    private EditText timeInput;
+    private EditText nameId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,9 @@ int timei;
                name.setText(S);
             }
         });
-
+        dateInput = findViewById(R.id.dateInput);
+        timeInput = findViewById(R.id.timeInput);
+        nameId = findViewById(R.id.nameId);
     }
 
 
@@ -91,6 +96,9 @@ int timei;
     }
 
 
+    public void onClickOk(View view) {
+        Dal dal=new Dal(this);
+        dal.addBoard_list(dateInput.getText().toString(), timeInput.getText().toString(), nameId.getText().toString());
 
-
+    }
 }

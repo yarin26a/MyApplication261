@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -18,11 +19,15 @@ public class MainActivity2 extends AppCompatActivity {
     public SeekBar customSeekBar1;
     private TextView customAgeTextView;
     private TextView customWeightTextView;
+    private EditText editTextTextPersonName;
+    private EditText editTextTextEmailAddress2;
+    private EditText editTextTextPassword3;
+
     private OnSeekBarChangeListener customSeekBarListener = new OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             age = seekBar.getProgress();
-            customAgeTextView.setText(age);
+            customAgeTextView.setText(String.valueOf(age));
         }
 
         @Override
@@ -41,7 +46,7 @@ public class MainActivity2 extends AppCompatActivity {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
           weight = seekBar.getProgress();
-          customWeightTextView.setText(weight);
+          customWeightTextView.setText( String.valueOf(weight));
         }
 
         @Override
@@ -73,9 +78,14 @@ public class MainActivity2 extends AppCompatActivity {
         customSeekBar.setOnSeekBarChangeListener(customSeekBarListener);
         customSeekBar1 = findViewById(R.id.customSeekBar1);
         customSeekBar1.setOnSeekBarChangeListener(customSeekBarListener1);
+        editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
+        editTextTextEmailAddress2 = findViewById(R.id.editTextTextEmailAddress2);
+        editTextTextPassword3 = findViewById(R.id.editTextTextPassword3);
     }
 
     public void onClicksubmitregister(View view) {
+        Dal dal=new Dal(this);
+        dal.addContact(editTextTextPersonName.getText().toString(), editTextTextEmailAddress2.getText().toString(), editTextTextPassword3.getText().toString(), Integer.parseInt(customWeightTextView.getText().toString()),Integer.parseInt( customAgeTextView.getText().toString()));
         Intent j=new Intent(this, MainActivity3.class);
         startActivity(j);
     }

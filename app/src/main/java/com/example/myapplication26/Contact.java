@@ -12,16 +12,16 @@ public class Contact {
         private String email;
         private String password;
         private int age;
-        private int wheight;
+        private int weight;
 
-        public Contact(long id, String name, String email, String password, int age, int wheight)
+        public Contact(long id, String name, String email, String password, int age, int weight)
         {
             this.id = id;
             this.name = name;
             this.email = email;
             this.password = password;
             this.age = age;
-            this.wheight = wheight;
+            this.weight = weight;
         }
         public Contact()
         {}
@@ -56,12 +56,12 @@ public class Contact {
             this.age = age;
         }
 
-        public int getWheight() {
-            return wheight;
+        public int getweight() {
+            return weight;
         }
 
-        public void setWheight(int wheight) {
-            this.wheight = wheight;
+        public void setweight(int weight) {
+            this.weight = weight;
         }
         @Override
         public String toString() {
@@ -71,7 +71,7 @@ public class Contact {
                     ", email='" + email + '\'' +
                     ", passwarod='" +password+ '\'' +
                     ",age='" + age + '\'' +
-                    ",wheight='" + wheight + '\'' + '}';
+                    ",weight='" + weight + '\'' + '}';
             }
         }
 
