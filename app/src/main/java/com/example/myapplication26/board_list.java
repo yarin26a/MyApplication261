@@ -2,12 +2,14 @@ package com.example.myapplication26;
 
 public class board_list {
     private long id;
+    private long contactId;
     private String date;
     private String time;
     private String train;
 
-    public board_list(long id, String date, String time, String train) {
+    public board_list(long id, long contactId, String date, String time, String train) {
         this.id = id;
+        this.contactId = contactId;
         this.date = date;
         this.time = time;
         this.train = train;
@@ -21,6 +23,10 @@ public class board_list {
     public void setId(long id){
         this.id = id;
     }
+    public long getContactId() {
+        return contactId; }
+    public void setContactId(long contactId) {
+        this.contactId = contactId; }
     public String getDate(){
         return date;
     }
@@ -44,9 +50,11 @@ public class board_list {
     public String toString() {
         return "Contact{ " +
                 "id=" + id +
+                ", contactId='" + contactId + '\''+
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", train='" +train+ '\'' + '}';
     }
+
 
 }
