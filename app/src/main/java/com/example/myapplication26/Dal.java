@@ -36,7 +36,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
             statement.execute();
         }
 
-        public void Getboard_list()
+       // public void Getboard_list()//
 
     }
 
