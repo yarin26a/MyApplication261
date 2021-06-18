@@ -85,9 +85,11 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void onClicksubmitregister(View view) {
         Dal dal=new Dal(this);
-        dal.addContact(editTextTextPersonName.getText().toString(), editTextTextEmailAddress2.getText().toString(), editTextTextPassword3.getText().toString(), Integer.parseInt(customWeightTextView.getText().toString()),Integer.parseInt( customAgeTextView.getText().toString()));
-        Intent j=new Intent(this, MainActivity3.class);
-        startActivity(j);
+       if( dal.addContact(editTextTextPersonName.getText().toString(), editTextTextEmailAddress2.getText().toString(), editTextTextPassword3.getText().toString(), Integer.parseInt(customWeightTextView.getText().toString()),Integer.parseInt( customAgeTextView.getText().toString()))){
+           Intent j=new Intent(this, MainActivity3.class);
+           j.putExtra("email" ,editTextTextEmailAddress2.getText().toString());
+           j.putExtra("id", dal.Getcontactinfo(editTextTextEmailAddress2.getText().toString()).getId());
+            startActivity(j);}
     }
 
     public void onClickloginInRegister(View view) {

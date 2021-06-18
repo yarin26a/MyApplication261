@@ -98,7 +98,7 @@ int timei;
 
     public void onClickOk(View view) {
         Dal dal=new Dal(this);
-        dal.addBoard_list(dateInput.getText().toString(), timeInput.getText().toString(), nameId.getText().toString());
+        dal.addBoard_list(dateInput.getText().toString(), timeInput.getText().toString(), nameId.getText().toString(), getIntent().getIntExtra("id",0));
 
     }
 }

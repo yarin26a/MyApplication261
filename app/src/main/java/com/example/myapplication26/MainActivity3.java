@@ -18,6 +18,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void onClickuserinfo(View view) {
         Intent i=new Intent(this, MainActivity4.class);
+        i.putExtra("email", getIntent().getStringExtra("email"));
         startActivity(i);
     }
 
