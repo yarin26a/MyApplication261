@@ -83,6 +83,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
             SQLiteDatabase db = this.getWritableDatabase();
             String st = "select * from board_list where contactid= "+id;
             Cursor cursor = db.rawQuery(st, null);
+            Log.i("yarin",String.valueOf(cursor.getCount()));
             return cursor.getCount();
 
         }
