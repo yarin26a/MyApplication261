@@ -17,8 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity5 extends AppCompatActivity {
-int datei;
-int timei;
+    int datei;
+    int timei;
     private EditText  dateInput;
     private EditText timeInput;
     private EditText nameId;
@@ -98,7 +98,8 @@ int timei;
 
     public void onClickOk(View view) {
         Dal dal=new Dal(this);
-        dal.addBoard_list(dateInput.getText().toString(), timeInput.getText().toString(), nameId.getText().toString(), getIntent().getIntExtra("id",0));
+        Contact c = dal.Getcontactinfo(getIntent().getStringExtra("email"));
+        dal.addBoard_list(dateInput.getText().toString(), timeInput.getText().toString(), nameId.getText().toString(), (int) c.getId());
 
     }
 }

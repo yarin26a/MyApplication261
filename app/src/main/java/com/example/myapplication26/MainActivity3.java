@@ -24,6 +24,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void onClickbordlist(View view) {
         Intent j=new Intent(this, MainActivity5.class);
+        j.putExtra("email", getIntent().getStringExtra("email"));
         startActivity(j);
     }
 

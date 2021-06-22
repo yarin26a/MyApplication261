@@ -18,7 +18,8 @@ public class MainActivity4 extends AppCompatActivity {
         Intent i=getIntent();
         Dal dal = new Dal(this);
         Contact c = dal.Getcontactinfo(i.getStringExtra("email"));
-        int numoftrain = dal.Gettrain(i.getIntExtra("id", 0));
+        //int numoftrain = dal.Gettrain(i.getIntExtra("id", 0));
+        int numoftrain = dal.Gettrain((int)c.getId());
         editTextTextPersonName2 = findViewById(R.id.editTextTextPersonName2);
         editTextTextPersonName3 = findViewById(R.id.editTextTextPersonName3);
         editTextTextPersonName4 = findViewById(R.id.editTextTextPersonName4);

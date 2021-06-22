@@ -56,7 +56,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
             return cursor.getCount() != 0; // Check if user exists
         }
-        //public void Getboard_list()//
+
 
         public Contact Getcontactinfo(String email)
         {
